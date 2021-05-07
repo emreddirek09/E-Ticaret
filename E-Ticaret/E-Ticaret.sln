@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Ticaret", "E-Ticaret\E-Ticaret.csproj", "{232E9FC1-689D-4D90-9B1F-59613B7C8EFB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proje.Business", "Proje.Business\Proje.Business.csproj", "{57946102-0558-4A28-9AA9-E8C55A29B31E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proje.DataAccess", "Proje.DataAccess\Proje.DataAccess.csproj", "{DD6E40F2-E32E-4EA8-8366-25AA0BB2BFCF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{232E9FC1-689D-4D90-9B1F-59613B7C8EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{232E9FC1-689D-4D90-9B1F-59613B7C8EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{232E9FC1-689D-4D90-9B1F-59613B7C8EFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57946102-0558-4A28-9AA9-E8C55A29B31E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57946102-0558-4A28-9AA9-E8C55A29B31E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57946102-0558-4A28-9AA9-E8C55A29B31E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57946102-0558-4A28-9AA9-E8C55A29B31E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD6E40F2-E32E-4EA8-8366-25AA0BB2BFCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD6E40F2-E32E-4EA8-8366-25AA0BB2BFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD6E40F2-E32E-4EA8-8366-25AA0BB2BFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD6E40F2-E32E-4EA8-8366-25AA0BB2BFCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

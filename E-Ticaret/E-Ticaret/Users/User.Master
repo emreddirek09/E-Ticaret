@@ -1,0 +1,201 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="E_Ticaret.Users.User" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="reative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BUSEM Butik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+                <div id="preloder" style="display: none;">
+                    <div class="loader" style="display: none;"></div>
+                </div>
+
+                <div class="offcanvas-menu-overlay"></div>
+                <div class="offcanvas-menu-wrapper">
+                    <div class="offcanvas__close">+</div>
+                    <ul class="offcanvas__widget">
+                        <li><span class="icon_search search-switch"></span></li>
+                        <li><a href="#"><span class="icon_heart_alt"></span>
+                            <div class="tip">2</div>
+                        </a></li>
+                        <li><a href="#"><span class="icon_bag_alt"></span>
+                            <div class="tip">2</div>
+                        </a></li>
+                    </ul>
+                    <div class="offcanvas__logo">
+                        <a href="./index.html">
+                            <img src="img/logo.png" alt=""></a>
+                    </div>
+                    <div id="mobile-menu-wrap">
+                        <div class="slicknav_menu">
+                            <a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_collapsed" style="outline: none;"><span class="slicknav_menutxt">MENU</span><span class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a><nav class="slicknav_nav slicknav_hidden" aria-hidden="true" role="menu" style="display: none;">
+                                <ul>
+                                    <li class="active"><a href="#" role="menuitem">Ana Sayfa</a></li>
+                                    
+                                    <li class="slicknav_collapsed slicknav_parent"><a href="#" role="menuitem" aria-haspopup="true" tabindex="-1" class="slicknav_item slicknav_row" style="outline: none;"><a href="#">Giyim</a>
+                                        <span class="slicknav_arrow">►</span></a><ul class="dropdown slicknav_hidden" role="menu" aria-hidden="true" style="display: none;">
+                                            <li><a href="#" role="menuitem" tabindex="-1">Üst Giyim</a></li>
+                                            <li><a href="#" role="menuitem" tabindex="-1">Alt Giyim</a></li>
+                                            <li><a href="#" role="menuitem" tabindex="-1">Dış Giyim</a></li>
+                                            <li><a href="#" role="menuitem" tabindex="-1">Elbise</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" role="menuitem">Kampanyalar</a></li>
+                                    <li><a href="#" role="menuitem">İletişim</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="offcanvas__auth">
+                        <a href="#">Login</a>
+                        <a href="#">Register</a>
+                    </div>
+                </div>
+                <header class="header">
+                    <div class="container-fluid">
+                        <div class="row">                            
+                            <div class="col-xl-6 col-lg-7">
+                                <nav class="header__menu">
+                                    <ul>
+                                        <li><a href="#">Ana Sayfa</a></li>
+                                        <li><a href="#">Giyim</a>
+                                            <ul class="dropdown">
+                                                <li><a href="#">Üst Giyim</a></li>
+                                                <li><a href="#">Alt Giyim</a></li>
+                                                <li><a href="#">Dış Giyim</a></li>
+                                                <li><a href="#">Elbise</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Kampanyalar</a></li>
+                                        <li><a href="#">İletişim</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-xl-3 col-lg-2">
+                                <div class="header__logo">
+                                    <a href="./index.html">
+                                        <img src="img/logo.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="header__right">
+                                    <div class="header__right__auth">
+                                        <a href="#">Login</a>
+                                        <a href="#">Register</a>
+                                    </div>
+                                    <ul class="header__right__widget">
+                                        <li><span class="icon_search search-switch"></span></li>
+                                        <li><a href="#"><span class="icon_heart_alt"></span>
+                                            <div class="tip">2</div>
+                                        </a></li>
+                                        <li><a href="#"><span class="icon_bag_alt"></span>
+                                            <div class="tip">2</div>
+                                        </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="canvas__open">
+                            <i class="fa fa-bars"></i>
+                        </div>
+                    </div>
+                </header>
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+                <div class="instagram">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-1.jpg" style="background-image: url(&quot;img/instagram/insta-1.jpg&quot;);">
+                                    <div class="instagram__text">
+                                        <i class="fa fa-instagram"></i>
+                                        <a href="#">@ ashion_shop</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-2.jpg" style="background-image: url(&quot;img/instagram/insta-2.jpg&quot;);">
+                                    <div class="instagram__text">
+                                        <i class="fa fa-instagram"></i>
+                                        <a href="#">@ ashion_shop</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-3.jpg" style="background-image: url(&quot;img/instagram/insta-3.jpg&quot;);">
+                                    <div class="instagram__text">
+                                        <i class="fa fa-instagram"></i>
+                                        <a href="#">@ ashion_shop</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-4.jpg" style="background-image: url(&quot;img/instagram/insta-4.jpg&quot;);">
+                                    <div class="instagram__text">
+                                        <i class="fa fa-instagram"></i>
+                                        <a href="#">@ ashion_shop</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-5.jpg" style="background-image: url(&quot;img/instagram/insta-5.jpg&quot;);">
+                                    <div class="instagram__text">
+                                        <i class="fa fa-instagram"></i>
+                                        <a href="#">@ ashion_shop</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-6.jpg" style="background-image: url(&quot;img/instagram/insta-6.jpg&quot;);">
+                                    <div class="instagram__text">
+                                        <i class="fa fa-instagram"></i>
+                                        <a href="#">@ ashion_shop</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-model">
+                    <div class="h-100 d-flex align-items-center justify-content-center">
+                        <div class="search-close-switch">+</div>
+                        <form class="search-model-form">
+                            <input type="text" id="search-input" placeholder="Search here.....">
+                        </form>
+                    </div>
+                </div>
+                <script src="js/jquery-3.3.1.min.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+                <script src="js/jquery.magnific-popup.min.js"></script>
+                <script src="js/jquery-ui.min.js"></script>
+                <script src="js/mixitup.min.js"></script>
+                <script src="js/jquery.countdown.min.js"></script>
+                <script src="js/jquery.slicknav.js"></script>
+                <script src="js/owl.carousel.min.js"></script>
+                <script src="js/jquery.nicescroll.min.js"></script>
+                <script src="js/main.js"></script>
+
+        </div>
+    </form>
+</body>
+</html>

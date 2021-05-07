@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="eTicaretModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AltKategori">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AnaKatFK" Type="int" Nullable="false" />
+          <Property Name="AltKategoriAdi" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AnaKategori">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ÜrünKategoriAdi" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Favoriler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LogidFK" Type="int" Nullable="false" />
+          <Property Name="ürünFK" Type="int" Nullable="false" />
+          <Property Name="Fav" Type="int" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="GirisYapan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ÜyeFK" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Urunler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AltKatFK" Type="int" Nullable="false" />
+          <Property Name="ürünAdi" Type="nvarchar(max)" />
+          <Property Name="fiyat" Type="int" />
+          <Property Name="beden" Type="nvarchar(max)" />
+          <Property Name="adet" Type="nvarchar(max)" />
+          <Property Name="ürünaciklama" Type="nvarchar(max)" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Uyeler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="isim" Type="nvarchar(max)" />
+          <Property Name="Soyadı" Type="nvarchar(max)" />
+          <Property Name="Mail" Type="nvarchar(max)" />
+          <Property Name="Adres" Type="nvarchar(max)" />
+          <Property Name="il" Type="nvarchar(max)" />
+          <Property Name="ilce" Type="nvarchar(max)" />
+          <Property Name="telefon" Type="nvarchar(max)" />
+          <Property Name="sifre" Type="nvarchar(max)" />
+          <Property Name="sifreOnay" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_AltKategori_AnaKategori">
+          <End Role="AnaKategori" Type="Self.AnaKategori" Multiplicity="1" />
+          <End Role="AltKategori" Type="Self.AltKategori" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnaKategori">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AltKategori">
+              <PropertyRef Name="AnaKatFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Favoriler_GirisYapan">
+          <End Role="GirisYapan" Type="Self.GirisYapan" Multiplicity="1" />
+          <End Role="Favoriler" Type="Self.Favoriler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GirisYapan">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Favoriler">
+              <PropertyRef Name="LogidFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Favoriler_Urunler">
+          <End Role="Urunler" Type="Self.Urunler" Multiplicity="1" />
+          <End Role="Favoriler" Type="Self.Favoriler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Urunler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Favoriler">
+              <PropertyRef Name="ürünFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GirisYapan_Uyeler">
+          <End Role="Uyeler" Type="Self.Uyeler" Multiplicity="1" />
+          <End Role="GirisYapan" Type="Self.GirisYapan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyeler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GirisYapan">
+              <PropertyRef Name="ÜyeFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Urunler_AltKategori">
+          <End Role="AltKategori" Type="Self.AltKategori" Multiplicity="1" />
+          <End Role="Urunler" Type="Self.Urunler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AltKategori">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Urunler">
+              <PropertyRef Name="AltKatFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="eTicaretModelStoreContainer">
+          <EntitySet Name="AltKategori" EntityType="Self.AltKategori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AnaKategori" EntityType="Self.AnaKategori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Favoriler" EntityType="Self.Favoriler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GirisYapan" EntityType="Self.GirisYapan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Urunler" EntityType="Self.Urunler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uyeler" EntityType="Self.Uyeler" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AltKategori_AnaKategori" Association="Self.FK_AltKategori_AnaKategori">
+            <End Role="AnaKategori" EntitySet="AnaKategori" />
+            <End Role="AltKategori" EntitySet="AltKategori" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Favoriler_GirisYapan" Association="Self.FK_Favoriler_GirisYapan">
+            <End Role="GirisYapan" EntitySet="GirisYapan" />
+            <End Role="Favoriler" EntitySet="Favoriler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Favoriler_Urunler" Association="Self.FK_Favoriler_Urunler">
+            <End Role="Urunler" EntitySet="Urunler" />
+            <End Role="Favoriler" EntitySet="Favoriler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GirisYapan_Uyeler" Association="Self.FK_GirisYapan_Uyeler">
+            <End Role="Uyeler" EntitySet="Uyeler" />
+            <End Role="GirisYapan" EntitySet="GirisYapan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Urunler_AltKategori" Association="Self.FK_Urunler_AltKategori">
+            <End Role="AltKategori" EntitySet="AltKategori" />
+            <End Role="Urunler" EntitySet="Urunler" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="eTicaretModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AltKategori">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AnaKatFK" Type="Int32" Nullable="false" />
+          <Property Name="AltKategoriAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AnaKategori" Relationship="Self.FK_AltKategori_AnaKategori" FromRole="AltKategori" ToRole="AnaKategori" />
+          <NavigationProperty Name="Urunler" Relationship="Self.FK_Urunler_AltKategori" FromRole="AltKategori" ToRole="Urunler" />
+        </EntityType>
+        <EntityType Name="AnaKategori">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ÜrünKategoriAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AltKategori" Relationship="Self.FK_AltKategori_AnaKategori" FromRole="AnaKategori" ToRole="AltKategori" />
+        </EntityType>
+        <EntityType Name="Favoriler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LogidFK" Type="Int32" Nullable="false" />
+          <Property Name="ürünFK" Type="Int32" Nullable="false" />
+          <Property Name="Fav" Type="Int32" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="GirisYapan" Relationship="Self.FK_Favoriler_GirisYapan" FromRole="Favoriler" ToRole="GirisYapan" />
+          <NavigationProperty Name="Urunler" Relationship="Self.FK_Favoriler_Urunler" FromRole="Favoriler" ToRole="Urunler" />
+        </EntityType>
+        <EntityType Name="GirisYapan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ÜyeFK" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Favoriler" Relationship="Self.FK_Favoriler_GirisYapan" FromRole="GirisYapan" ToRole="Favoriler" />
+          <NavigationProperty Name="Uyeler" Relationship="Self.FK_GirisYapan_Uyeler" FromRole="GirisYapan" ToRole="Uyeler" />
+        </EntityType>
+        <EntityType Name="Urunler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AltKatFK" Type="Int32" Nullable="false" />
+          <Property Name="ürünAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fiyat" Type="Int32" />
+          <Property Name="beden" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="adet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ürünaciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="AltKategori" Relationship="Self.FK_Urunler_AltKategori" FromRole="Urunler" ToRole="AltKategori" />
+          <NavigationProperty Name="Favoriler" Relationship="Self.FK_Favoriler_Urunler" FromRole="Urunler" ToRole="Favoriler" />
+        </EntityType>
+        <EntityType Name="Uyeler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="isim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Soyadı" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="il" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ilce" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="telefon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sifre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sifreOnay" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GirisYapan" Relationship="Self.FK_GirisYapan_Uyeler" FromRole="Uyeler" ToRole="GirisYapan" />
+        </EntityType>
+        <Association Name="FK_AltKategori_AnaKategori">
+          <End Role="AnaKategori" Type="Self.AnaKategori" Multiplicity="1" />
+          <End Role="AltKategori" Type="Self.AltKategori" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnaKategori">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AltKategori">
+              <PropertyRef Name="AnaKatFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Urunler_AltKategori">
+          <End Role="AltKategori" Type="Self.AltKategori" Multiplicity="1" />
+          <End Role="Urunler" Type="Self.Urunler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AltKategori">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Urunler">
+              <PropertyRef Name="AltKatFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Favoriler_GirisYapan">
+          <End Role="GirisYapan" Type="Self.GirisYapan" Multiplicity="1" />
+          <End Role="Favoriler" Type="Self.Favoriler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GirisYapan">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Favoriler">
+              <PropertyRef Name="LogidFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Favoriler_Urunler">
+          <End Role="Urunler" Type="Self.Urunler" Multiplicity="1" />
+          <End Role="Favoriler" Type="Self.Favoriler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Urunler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Favoriler">
+              <PropertyRef Name="ürünFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GirisYapan_Uyeler">
+          <End Role="Uyeler" Type="Self.Uyeler" Multiplicity="1" />
+          <End Role="GirisYapan" Type="Self.GirisYapan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyeler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GirisYapan">
+              <PropertyRef Name="ÜyeFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="eTicaretEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AltKategori" EntityType="Self.AltKategori" />
+          <EntitySet Name="AnaKategori" EntityType="Self.AnaKategori" />
+          <EntitySet Name="Favoriler" EntityType="Self.Favoriler" />
+          <EntitySet Name="GirisYapan" EntityType="Self.GirisYapan" />
+          <EntitySet Name="Urunler" EntityType="Self.Urunler" />
+          <EntitySet Name="Uyeler" EntityType="Self.Uyeler" />
+          <AssociationSet Name="FK_AltKategori_AnaKategori" Association="Self.FK_AltKategori_AnaKategori">
+            <End Role="AnaKategori" EntitySet="AnaKategori" />
+            <End Role="AltKategori" EntitySet="AltKategori" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Urunler_AltKategori" Association="Self.FK_Urunler_AltKategori">
+            <End Role="AltKategori" EntitySet="AltKategori" />
+            <End Role="Urunler" EntitySet="Urunler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Favoriler_GirisYapan" Association="Self.FK_Favoriler_GirisYapan">
+            <End Role="GirisYapan" EntitySet="GirisYapan" />
+            <End Role="Favoriler" EntitySet="Favoriler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Favoriler_Urunler" Association="Self.FK_Favoriler_Urunler">
+            <End Role="Urunler" EntitySet="Urunler" />
+            <End Role="Favoriler" EntitySet="Favoriler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GirisYapan_Uyeler" Association="Self.FK_GirisYapan_Uyeler">
+            <End Role="Uyeler" EntitySet="Uyeler" />
+            <End Role="GirisYapan" EntitySet="GirisYapan" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="eTicaretModelStoreContainer" CdmEntityContainer="eTicaretEntities">
+          <EntitySetMapping Name="AltKategori">
+            <EntityTypeMapping TypeName="eTicaretModel.AltKategori">
+              <MappingFragment StoreEntitySet="AltKategori">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="AnaKatFK" ColumnName="AnaKatFK" />
+                <ScalarProperty Name="AltKategoriAdi" ColumnName="AltKategoriAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AnaKategori">
+            <EntityTypeMapping TypeName="eTicaretModel.AnaKategori">
+              <MappingFragment StoreEntitySet="AnaKategori">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ÜrünKategoriAdi" ColumnName="ÜrünKategoriAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Favoriler">
+            <EntityTypeMapping TypeName="eTicaretModel.Favoriler">
+              <MappingFragment StoreEntitySet="Favoriler">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="LogidFK" ColumnName="LogidFK" />
+                <ScalarProperty Name="ürünFK" ColumnName="ürünFK" />
+                <ScalarProperty Name="Fav" ColumnName="Fav" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GirisYapan">
+            <EntityTypeMapping TypeName="eTicaretModel.GirisYapan">
+              <MappingFragment StoreEntitySet="GirisYapan">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ÜyeFK" ColumnName="ÜyeFK" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Urunler">
+            <EntityTypeMapping TypeName="eTicaretModel.Urunler">
+              <MappingFragment StoreEntitySet="Urunler">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="AltKatFK" ColumnName="AltKatFK" />
+                <ScalarProperty Name="ürünAdi" ColumnName="ürünAdi" />
+                <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+                <ScalarProperty Name="beden" ColumnName="beden" />
+                <ScalarProperty Name="adet" ColumnName="adet" />
+                <ScalarProperty Name="ürünaciklama" ColumnName="ürünaciklama" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Uyeler">
+            <EntityTypeMapping TypeName="eTicaretModel.Uyeler">
+              <MappingFragment StoreEntitySet="Uyeler">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="isim" ColumnName="isim" />
+                <ScalarProperty Name="Soyadı" ColumnName="Soyadı" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="il" ColumnName="il" />
+                <ScalarProperty Name="ilce" ColumnName="ilce" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="sifreOnay" ColumnName="sifreOnay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
