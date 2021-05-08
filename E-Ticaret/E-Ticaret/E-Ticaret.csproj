@@ -641,6 +641,11 @@
     <Content Include="Users\Default.aspx" />
     <Content Include="Users\Register.aspx" />
     <Content Include="Users\Login.aspx" />
+    <Content Include="Users\Kampanyalar.aspx" />
+    <Content Include="Users\Shop.aspx" />
+    <Content Include="Users\Contact.aspx" />
+    <Content Include="Users\Sepet.aspx" />
+    <Content Include="Users\UrunDetay.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -686,6 +691,41 @@
     </Compile>
     <Compile Include="Users\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Kampanyalar.aspx.cs">
+      <DependentUpon>Kampanyalar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\Kampanyalar.aspx.designer.cs">
+      <DependentUpon>Kampanyalar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Shop.aspx.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\Shop.aspx.designer.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Sepet.aspx.cs">
+      <DependentUpon>Sepet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\Sepet.aspx.designer.cs">
+      <DependentUpon>Sepet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UrunDetay.aspx.cs">
+      <DependentUpon>UrunDetay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\UrunDetay.aspx.designer.cs">
+      <DependentUpon>UrunDetay.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -50,7 +50,7 @@
                             <ul>
                                 <li class="active"><a href="Default.aspx" role="menuitem">Ana Sayfa</a></li>
 
-                                <li class="slicknav_collapsed slicknav_parent"><a href="#" role="menuitem" aria-haspopup="true" tabindex="-1" class="slicknav_item slicknav_row" style="outline: none;"><a href="#">Giyim</a>
+                                <li class="slicknav_collapsed slicknav_parent"><a href="#" role="menuitem" aria-haspopup="true" tabindex="-1" class="slicknav_item slicknav_row" style="outline: none;"><a href="Shop.aspx">Gİyİm</a>
                                     <span class="slicknav_arrow">►</span></a><ul class="dropdown slicknav_hidden" role="menu" aria-hidden="true" style="display: none;">
                                         <li><a href="#" role="menuitem" tabindex="-1">Üst Giyim</a></li>
                                         <li><a href="#" role="menuitem" tabindex="-1">Alt Giyim</a></li>
@@ -58,8 +58,8 @@
                                         <li><a href="#" role="menuitem" tabindex="-1">Elbise</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#" role="menuitem">Kampanyalar</a></li>
-                                <li><a href="#" role="menuitem">İletişim</a></li>
+                                <li><a href="Kampanyalar.aspx" role="menuitem">Kampanyalar</a></li>
+                                <li><a href="Contact.aspx" role="menuitem">İletİşİm</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -76,7 +76,7 @@
                             <nav class="header__menu">
                                 <ul>
                                     <li><a href="Default.aspx">Ana Sayfa</a></li>
-                                    <li><a href="#">Giyim</a>
+                                    <li><a href="Shop.aspx">Gİyİm</a>
                                         <ul class="dropdown">
                                             <li><a href="#">Üst Giyim</a></li>
                                             <li><a href="#">Alt Giyim</a></li>
@@ -84,8 +84,10 @@
                                             <li><a href="#">Elbise</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Kampanyalar</a></li>
-                                    <li><a href="#">İletişim</a></li>
+                                    <li><a href="Kampanyalar.aspx">Kampanyalar</a></li>
+                                    <li><a href="Contact.aspx">İletİşİm</a></li>
+                                    <li><a href=" UrunDetay.aspx">Ürün Detay Deneme</a></li>
+                                   
                                 </ul>
                             </nav>
                         </div>
@@ -106,7 +108,7 @@
                                     <li><a href="#"><span class="icon_heart_alt"></span>
                                         <div class="tip">2</div>
                                     </a></li>
-                                    <li><a href="#"><span class="icon_bag_alt"></span>
+                                    <li><a href="Sepet.aspx"><span class="icon_bag_alt"></span>
                                         <div class="tip">2</div>
                                     </a></li>
                                 </ul>
