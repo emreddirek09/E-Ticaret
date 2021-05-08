@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="eTicaretModelStoreContainer" CdmEntityContainer="eTicaretEntities">
+    <EntitySetMapping Name="AltKategori">
+      <EntityTypeMapping TypeName="eTicaretModel.AltKategori">
+        <MappingFragment StoreEntitySet="AltKategori">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="AnaKatFK" ColumnName="AnaKatFK" />
+          <ScalarProperty Name="AltKategoriAdi" ColumnName="AltKategoriAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnaKategori">
+      <EntityTypeMapping TypeName="eTicaretModel.AnaKategori">
+        <MappingFragment StoreEntitySet="AnaKategori">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ÜrünKategoriAdi" ColumnName="ÜrünKategoriAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Favoriler">
+      <EntityTypeMapping TypeName="eTicaretModel.Favoriler">
+        <MappingFragment StoreEntitySet="Favoriler">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="LogidFK" ColumnName="LogidFK" />
+          <ScalarProperty Name="ürünFK" ColumnName="ürünFK" />
+          <ScalarProperty Name="Fav" ColumnName="Fav" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GirisYapan">
+      <EntityTypeMapping TypeName="eTicaretModel.GirisYapan">
+        <MappingFragment StoreEntitySet="GirisYapan">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ÜyeFK" ColumnName="ÜyeFK" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Urunler">
+      <EntityTypeMapping TypeName="eTicaretModel.Urunler">
+        <MappingFragment StoreEntitySet="Urunler">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="AltKatFK" ColumnName="AltKatFK" />
+          <ScalarProperty Name="ürünAdi" ColumnName="ürünAdi" />
+          <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+          <ScalarProperty Name="beden" ColumnName="beden" />
+          <ScalarProperty Name="adet" ColumnName="adet" />
+          <ScalarProperty Name="ürünaciklama" ColumnName="ürünaciklama" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uyeler">
+      <EntityTypeMapping TypeName="eTicaretModel.Uyeler">
+        <MappingFragment StoreEntitySet="Uyeler">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="isim" ColumnName="isim" />
+          <ScalarProperty Name="Soyadı" ColumnName="Soyadı" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="il" ColumnName="il" />
+          <ScalarProperty Name="ilce" ColumnName="ilce" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="sifreOnay" ColumnName="sifreOnay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
