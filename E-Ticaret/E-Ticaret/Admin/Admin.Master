@@ -32,7 +32,7 @@
                 </div>
                 <div class="top-nav notification-row">
                     <ul class="nav pull-right top-menu">
-                                                <li class="dropdown">
+                        <li class="dropdown">
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="profile-ava">
                                     <img alt="" src="img/avatar1_small.jpg">
@@ -40,10 +40,10 @@
                                 <span class="username">Jenifer Smith</span>
                                 <b class="caret"></b>
                             </a>
-                            <ul class="dropdown-menu extended logout">                               
+                            <ul class="dropdown-menu extended logout">
                                 <li>
                                     <a href="#"><i class="icon_key_alt"></i>Log Out</a>
-                                </li>                                
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -51,41 +51,52 @@
             </header>
             <aside>
                 <div id="sidebar" class="nav-collapse " tabindex="5000" style="overflow: hidden; outline: none;">
-                    <ul class="sidebar-menu" style="display: block;">
-                        <li class="active">
-                            <a class="" href="#">
-                                <i class="icon_house_alt"></i>
-                                <span>Ürünler</span>
+                    <ul class="sidebar-menu" style="display: block;">  
+                        <li>
+                            <a class="" href="SliderEkleme.aspx">
+                                <i class="icon_desktop"></i>
+                                <span>Slider Ekleme</span>
                             </a>
                         </li>
                         <li>
-                            <a class="" href="#">
-                                 <i class="icon_document_alt"></i>
+                            <a class="" href="BannerEkleme.aspx">
+                                <i class="icon_desktop"></i>
+                                <span>Banner Ekleme</span>
+                            </a>
+                        </li> 
+                        <li>
+                            <a class="" href="Kategoriler.aspx">
+                                <i class="icon_document_alt"></i>
                                 <span>Kategoriler</span>
                             </a>
                         </li>
                         <li>
-                            <a class="" href="#">
-                                <i class="icon_desktop"></i>
-                                <span>Galeri</span>
-                            </a>
-                        </li>                        
-                        <li>
-                            <a class="" href="#">
-                                <i class="icon_genius"></i>
-                                <span>Hakkımızda</span>
+                            <a class="" href="SosyalMedyaResim.aspx">
+                                <i class="icon_document_alt"></i>
+                                <span>Kategoriler</span>
                             </a>
                         </li>
+                        <li class="active">
+                            <a class="" href="ürünler.aspx">
+                                <i class="icon_house_alt"></i>
+                                <span>Ürünler</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a class="" href="KampanyaliÜrünler.aspx">
+                                <i class="icon_house_alt"></i>
+                                <span>Kampanyalı Ürünler</span>
+                            </a>
+                        </li>                                               
                         <li>
-                            <a class="" href="#">
+                            <a class="" href="iletisim.aspx">
                                 <i class="icon_piechart"></i>
                                 <span>İletişim</span>
                             </a>
                         </li>
-                                               
                     </ul>
                 </div>
-            </aside>     
+            </aside>
         </section>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

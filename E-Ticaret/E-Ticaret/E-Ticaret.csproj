@@ -537,7 +537,13 @@
     <Content Include="Admin\js\sparkline-chart.js" />
     <Content Include="Admin\js\sparklines.js" />
     <Content Include="Admin\js\xcharts.min.js" />
-    <Content Include="Admin\WebForm2.aspx" />
+    <Content Include="Admin\Kategoriler.aspx" />
+    <Content Include="Admin\KampanyaliÜrünler.aspx" />
+    <Content Include="Admin\BannerEkleme.aspx" />
+    <Content Include="Admin\SliderEkleme.aspx" />
+    <Content Include="Admin\SosyalMedyaResim.aspx" />
+    <Content Include="Admin\iletisim.aspx" />
+    <Content Include="Admin\ürünler.aspx" />
     <Content Include="Users\css\bootstrap.min.css" />
     <Content Include="Users\css\elegant-icons.css" />
     <Content Include="Users\css\font-awesome.min.css" />
@@ -656,12 +662,54 @@
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
-    <Compile Include="Admin\WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
+    <Compile Include="Admin\Kategoriler.aspx.cs">
+      <DependentUpon>Kategoriler.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
+    <Compile Include="Admin\Kategoriler.aspx.designer.cs">
+      <DependentUpon>Kategoriler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\KampanyaliÜrünler.aspx.cs">
+      <DependentUpon>KampanyaliÜrünler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\KampanyaliÜrünler.aspx.designer.cs">
+      <DependentUpon>KampanyaliÜrünler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BannerEkleme.aspx.cs">
+      <DependentUpon>BannerEkleme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BannerEkleme.aspx.designer.cs">
+      <DependentUpon>BannerEkleme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SliderEkleme.aspx.cs">
+      <DependentUpon>SliderEkleme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SliderEkleme.aspx.designer.cs">
+      <DependentUpon>SliderEkleme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SosyalMedyaResim.aspx.cs">
+      <DependentUpon>SosyalMedyaResim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SosyalMedyaResim.aspx.designer.cs">
+      <DependentUpon>SosyalMedyaResim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\iletisim.aspx.cs">
+      <DependentUpon>iletisim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\iletisim.aspx.designer.cs">
+      <DependentUpon>iletisim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ürünler.aspx.cs">
+      <DependentUpon>ürünler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ürünler.aspx.designer.cs">
+      <DependentUpon>ürünler.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Users\User.Master.cs">
