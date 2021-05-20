@@ -13,10 +13,10 @@ namespace Proje.DataAccess
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class eTicaretEntities : DbContext
+    public partial class eTicaretEntities1 : DbContext
     {
-        public eTicaretEntities()
-            : base("name=eTicaretEntities")
+        public eTicaretEntities1()
+            : base("name=eTicaretEntities1")
         {
         }
     
@@ -27,8 +27,15 @@ namespace Proje.DataAccess
     
         public virtual DbSet<AltKategori> AltKategori { get; set; }
         public virtual DbSet<AnaKategori> AnaKategori { get; set; }
+        public virtual DbSet<Banner> Banner { get; set; }
         public virtual DbSet<Favoriler> Favoriler { get; set; }
         public virtual DbSet<GirisYapan> GirisYapan { get; set; }
+        public virtual DbSet<iletisim> iletisim { get; set; }
+        public virtual DbSet<Kampanya> Kampanya { get; set; }
+        public virtual DbSet<KampanyaKategori> KampanyaKategori { get; set; }
+        public virtual DbSet<Slider> Slider { get; set; }
+        public virtual DbSet<SosyalMedyaResim> SosyalMedyaResim { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Urunler> Urunler { get; set; }
         public virtual DbSet<Uyeler> Uyeler { get; set; }
     }

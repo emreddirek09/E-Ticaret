@@ -20,6 +20,13 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ÜrünKategoriAdi" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="Banner">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="banner" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="Favoriler">
           <Key>
             <PropertyRef Name="id" />
@@ -38,6 +45,71 @@
           <Property Name="ÜyeFK" Type="int" Nullable="false" />
           <Property Name="date" Type="datetime" />
         </EntityType>
+        <EntityType Name="iletisim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="isim" Type="nvarchar(max)" />
+          <Property Name="mail" Type="nvarchar(max)" />
+          <Property Name="mesaj" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Kampanya">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ürünAdi" Type="nvarchar(max)" />
+          <Property Name="fiyat" Type="int" />
+          <Property Name="beden" Type="nvarchar(max)" />
+          <Property Name="adet" Type="int" />
+          <Property Name="ürünaciklama" Type="nvarchar(max)" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="Resim1" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="KampanyaKategori">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KampanyaFK" Type="int" Nullable="false" />
+          <Property Name="KampanyaAdi" Type="nvarchar(max)" />
+          <Property Name="KampanyaBanner" Type="nvarchar(max)" />
+          <Property Name="date" Type="date" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Resim1" Type="nvarchar(max)" />
+          <Property Name="Resim2" Type="nvarchar(max)" />
+          <Property Name="Resim3" Type="nvarchar(max)" />
+          <Property Name="Resim4" Type="nvarchar(max)" />
+          <Property Name="Resim5" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="SosyalMedyaResim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Resim1" Type="nvarchar(max)" />
+          <Property Name="Resim2" Type="nvarchar(max)" />
+          <Property Name="Resim3" Type="nvarchar(max)" />
+          <Property Name="Resim4" Type="nvarchar(max)" />
+          <Property Name="Resim5" Type="nvarchar(max)" />
+          <Property Name="Resim6" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="Urunler">
           <Key>
             <PropertyRef Name="id" />
@@ -50,6 +122,10 @@
           <Property Name="adet" Type="nvarchar(max)" />
           <Property Name="ürünaciklama" Type="nvarchar(max)" />
           <Property Name="date" Type="datetime" />
+          <Property Name="Resim1" Type="nvarchar(max)" />
+          <Property Name="Resim2" Type="nvarchar(max)" />
+          <Property Name="Resim3" Type="nvarchar(max)" />
+          <Property Name="Resim4" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Uyeler">
           <Key>
@@ -65,6 +141,7 @@
           <Property Name="telefon" Type="nvarchar(max)" />
           <Property Name="sifre" Type="nvarchar(max)" />
           <Property Name="sifreOnay" Type="nvarchar(max)" />
+          <Property Name="date" Type="datetime" />
         </EntityType>
         <Association Name="FK_AltKategori_AnaKategori">
           <End Role="AnaKategori" Type="Self.AnaKategori" Multiplicity="1" />
@@ -114,6 +191,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_KampanyaKategori_Kampanya">
+          <End Role="Kampanya" Type="Self.Kampanya" Multiplicity="1" />
+          <End Role="KampanyaKategori" Type="Self.KampanyaKategori" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kampanya">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="KampanyaKategori">
+              <PropertyRef Name="KampanyaFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Urunler_AltKategori">
           <End Role="AltKategori" Type="Self.AltKategori" Multiplicity="1" />
           <End Role="Urunler" Type="Self.Urunler" Multiplicity="*" />
@@ -129,8 +218,15 @@
         <EntityContainer Name="eTicaretModelStoreContainer">
           <EntitySet Name="AltKategori" EntityType="Self.AltKategori" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AnaKategori" EntityType="Self.AnaKategori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Banner" EntityType="Self.Banner" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Favoriler" EntityType="Self.Favoriler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GirisYapan" EntityType="Self.GirisYapan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="iletisim" EntityType="Self.iletisim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kampanya" EntityType="Self.Kampanya" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KampanyaKategori" EntityType="Self.KampanyaKategori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SosyalMedyaResim" EntityType="Self.SosyalMedyaResim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Urunler" EntityType="Self.Urunler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Uyeler" EntityType="Self.Uyeler" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_AltKategori_AnaKategori" Association="Self.FK_AltKategori_AnaKategori">
@@ -148,6 +244,10 @@
           <AssociationSet Name="FK_GirisYapan_Uyeler" Association="Self.FK_GirisYapan_Uyeler">
             <End Role="Uyeler" EntitySet="Uyeler" />
             <End Role="GirisYapan" EntitySet="GirisYapan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KampanyaKategori_Kampanya" Association="Self.FK_KampanyaKategori_Kampanya">
+            <End Role="Kampanya" EntitySet="Kampanya" />
+            <End Role="KampanyaKategori" EntitySet="KampanyaKategori" />
           </AssociationSet>
           <AssociationSet Name="FK_Urunler_AltKategori" Association="Self.FK_Urunler_AltKategori">
             <End Role="AltKategori" EntitySet="AltKategori" />
@@ -177,6 +277,13 @@
           <Property Name="ÜrünKategoriAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AltKategori" Relationship="Self.FK_AltKategori_AnaKategori" FromRole="AnaKategori" ToRole="AltKategori" />
         </EntityType>
+        <EntityType Name="Banner">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="banner1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="Favoriler">
           <Key>
             <PropertyRef Name="id" />
@@ -199,6 +306,73 @@
           <NavigationProperty Name="Favoriler" Relationship="Self.FK_Favoriler_GirisYapan" FromRole="GirisYapan" ToRole="Favoriler" />
           <NavigationProperty Name="Uyeler" Relationship="Self.FK_GirisYapan_Uyeler" FromRole="GirisYapan" ToRole="Uyeler" />
         </EntityType>
+        <EntityType Name="iletisim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="isim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mesaj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Kampanya">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ürünAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fiyat" Type="Int32" />
+          <Property Name="beden" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="adet" Type="Int32" />
+          <Property Name="ürünaciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="Resim1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KampanyaKategori" Relationship="Self.FK_KampanyaKategori_Kampanya" FromRole="Kampanya" ToRole="KampanyaKategori" />
+        </EntityType>
+        <EntityType Name="KampanyaKategori">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KampanyaFK" Type="Int32" Nullable="false" />
+          <Property Name="KampanyaAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KampanyaBanner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Kampanya" Relationship="Self.FK_KampanyaKategori_Kampanya" FromRole="KampanyaKategori" ToRole="Kampanya" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Resim1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Resim2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Resim3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Resim4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Resim5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SosyalMedyaResim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Resim1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Resim2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Resim3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Resim4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Resim5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Resim6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="Urunler">
           <Key>
             <PropertyRef Name="id" />
@@ -211,6 +385,10 @@
           <Property Name="adet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ürünaciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="Resim1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Resim2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Resim3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Resim4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AltKategori" Relationship="Self.FK_Urunler_AltKategori" FromRole="Urunler" ToRole="AltKategori" />
           <NavigationProperty Name="Favoriler" Relationship="Self.FK_Favoriler_Urunler" FromRole="Urunler" ToRole="Favoriler" />
         </EntityType>
@@ -228,6 +406,7 @@
           <Property Name="telefon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="sifre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="sifreOnay" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="3" />
           <NavigationProperty Name="GirisYapan" Relationship="Self.FK_GirisYapan_Uyeler" FromRole="Uyeler" ToRole="GirisYapan" />
         </EntityType>
         <Association Name="FK_AltKategori_AnaKategori">
@@ -290,11 +469,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="eTicaretEntities" annotation:LazyLoadingEnabled="true">
+        <Association Name="FK_KampanyaKategori_Kampanya">
+          <End Role="Kampanya" Type="Self.Kampanya" Multiplicity="1" />
+          <End Role="KampanyaKategori" Type="Self.KampanyaKategori" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kampanya">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="KampanyaKategori">
+              <PropertyRef Name="KampanyaFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="eTicaretEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AltKategori" EntityType="Self.AltKategori" />
           <EntitySet Name="AnaKategori" EntityType="Self.AnaKategori" />
+          <EntitySet Name="Banner" EntityType="Self.Banner" />
           <EntitySet Name="Favoriler" EntityType="Self.Favoriler" />
           <EntitySet Name="GirisYapan" EntityType="Self.GirisYapan" />
+          <EntitySet Name="iletisim" EntityType="Self.iletisim" />
+          <EntitySet Name="Kampanya" EntityType="Self.Kampanya" />
+          <EntitySet Name="KampanyaKategori" EntityType="Self.KampanyaKategori" />
+          <EntitySet Name="Slider" EntityType="Self.Slider" />
+          <EntitySet Name="SosyalMedyaResim" EntityType="Self.SosyalMedyaResim" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Urunler" EntityType="Self.Urunler" />
           <EntitySet Name="Uyeler" EntityType="Self.Uyeler" />
           <AssociationSet Name="FK_AltKategori_AnaKategori" Association="Self.FK_AltKategori_AnaKategori">
@@ -317,13 +515,17 @@
             <End Role="Uyeler" EntitySet="Uyeler" />
             <End Role="GirisYapan" EntitySet="GirisYapan" />
           </AssociationSet>
+          <AssociationSet Name="FK_KampanyaKategori_Kampanya" Association="Self.FK_KampanyaKategori_Kampanya">
+            <End Role="Kampanya" EntitySet="Kampanya" />
+            <End Role="KampanyaKategori" EntitySet="KampanyaKategori" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="eTicaretModelStoreContainer" CdmEntityContainer="eTicaretEntities">
+        <EntityContainerMapping StorageEntityContainer="eTicaretModelStoreContainer" CdmEntityContainer="eTicaretEntities1">
           <EntitySetMapping Name="AltKategori">
             <EntityTypeMapping TypeName="eTicaretModel.AltKategori">
               <MappingFragment StoreEntitySet="AltKategori">
@@ -338,6 +540,14 @@
               <MappingFragment StoreEntitySet="AnaKategori">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="ÜrünKategoriAdi" ColumnName="ÜrünKategoriAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Banner">
+            <EntityTypeMapping TypeName="eTicaretModel.Banner">
+              <MappingFragment StoreEntitySet="Banner">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="banner1" ColumnName="banner" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -361,6 +571,77 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="iletisim">
+            <EntityTypeMapping TypeName="eTicaretModel.iletisim">
+              <MappingFragment StoreEntitySet="iletisim">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="isim" ColumnName="isim" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="mesaj" ColumnName="mesaj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kampanya">
+            <EntityTypeMapping TypeName="eTicaretModel.Kampanya">
+              <MappingFragment StoreEntitySet="Kampanya">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ürünAdi" ColumnName="ürünAdi" />
+                <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+                <ScalarProperty Name="beden" ColumnName="beden" />
+                <ScalarProperty Name="adet" ColumnName="adet" />
+                <ScalarProperty Name="ürünaciklama" ColumnName="ürünaciklama" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="Resim1" ColumnName="Resim1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KampanyaKategori">
+            <EntityTypeMapping TypeName="eTicaretModel.KampanyaKategori">
+              <MappingFragment StoreEntitySet="KampanyaKategori">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="KampanyaFK" ColumnName="KampanyaFK" />
+                <ScalarProperty Name="KampanyaAdi" ColumnName="KampanyaAdi" />
+                <ScalarProperty Name="KampanyaBanner" ColumnName="KampanyaBanner" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Slider">
+            <EntityTypeMapping TypeName="eTicaretModel.Slider">
+              <MappingFragment StoreEntitySet="Slider">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Resim1" ColumnName="Resim1" />
+                <ScalarProperty Name="Resim2" ColumnName="Resim2" />
+                <ScalarProperty Name="Resim3" ColumnName="Resim3" />
+                <ScalarProperty Name="Resim4" ColumnName="Resim4" />
+                <ScalarProperty Name="Resim5" ColumnName="Resim5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SosyalMedyaResim">
+            <EntityTypeMapping TypeName="eTicaretModel.SosyalMedyaResim">
+              <MappingFragment StoreEntitySet="SosyalMedyaResim">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Resim1" ColumnName="Resim1" />
+                <ScalarProperty Name="Resim2" ColumnName="Resim2" />
+                <ScalarProperty Name="Resim3" ColumnName="Resim3" />
+                <ScalarProperty Name="Resim4" ColumnName="Resim4" />
+                <ScalarProperty Name="Resim5" ColumnName="Resim5" />
+                <ScalarProperty Name="Resim6" ColumnName="Resim6" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="eTicaretModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Urunler">
             <EntityTypeMapping TypeName="eTicaretModel.Urunler">
               <MappingFragment StoreEntitySet="Urunler">
@@ -372,6 +653,10 @@
                 <ScalarProperty Name="adet" ColumnName="adet" />
                 <ScalarProperty Name="ürünaciklama" ColumnName="ürünaciklama" />
                 <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="Resim1" ColumnName="Resim1" />
+                <ScalarProperty Name="Resim2" ColumnName="Resim2" />
+                <ScalarProperty Name="Resim3" ColumnName="Resim3" />
+                <ScalarProperty Name="Resim4" ColumnName="Resim4" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -388,6 +673,7 @@
                 <ScalarProperty Name="telefon" ColumnName="telefon" />
                 <ScalarProperty Name="sifre" ColumnName="sifre" />
                 <ScalarProperty Name="sifreOnay" ColumnName="sifreOnay" />
+                <ScalarProperty Name="date" ColumnName="date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

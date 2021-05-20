@@ -57,3 +57,12 @@ C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\E-Ticaret\obj\Debug\E-Ticaret.csp
 C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\E-Ticaret\obj\Debug\E-Ticaret.csproj.CopyComplete
 C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\E-Ticaret\obj\Debug\E-Ticaret.dll
 C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\E-Ticaret\obj\Debug\E-Ticaret.pdb
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\E-Ticaret\bin\Proje.Business.dll
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\E-Ticaret\bin\Proje.DataAccess.dll
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\E-Ticaret\bin\EntityFramework.dll
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\E-Ticaret\bin\Proje.DataAccess.pdb
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\E-Ticaret\bin\Proje.DataAccess.dll.config
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\E-Ticaret\bin\Proje.Business.pdb
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\E-Ticaret\bin\EntityFramework.xml
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\E-Ticaret\bin\EntityFramework.SqlServer.dll
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\E-Ticaret\bin\EntityFramework.SqlServer.xml

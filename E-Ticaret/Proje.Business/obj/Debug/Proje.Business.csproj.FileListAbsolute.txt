@@ -4,3 +4,14 @@ C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.Business\obj\Debug\Proje.Bu
 C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.Business\obj\Debug\Proje.Business.csproj.CoreCompileInputs.cache
 C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.Business\obj\Debug\Proje.Business.dll
 C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.Business\obj\Debug\Proje.Business.pdb
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.Business\bin\Debug\E-Ticaret.dll
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.Business\bin\Debug\EntityFramework.dll
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.Business\bin\Debug\Proje.DataAccess.dll
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.Business\bin\Debug\E-Ticaret.pdb
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.Business\bin\Debug\E-Ticaret.dll.config
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.Business\bin\Debug\Proje.DataAccess.pdb
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.Business\bin\Debug\Proje.DataAccess.dll.config
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.Business\bin\Debug\EntityFramework.xml
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.Business\obj\Debug\Proje.Business.csproj.CopyComplete

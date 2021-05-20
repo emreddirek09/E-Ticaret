@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="eTicaretModelStoreContainer" CdmEntityContainer="eTicaretEntities">
+  <EntityContainerMapping StorageEntityContainer="eTicaretModelStoreContainer" CdmEntityContainer="eTicaretEntities1">
     <EntitySetMapping Name="AltKategori">
       <EntityTypeMapping TypeName="eTicaretModel.AltKategori">
         <MappingFragment StoreEntitySet="AltKategori">
@@ -15,6 +15,14 @@
         <MappingFragment StoreEntitySet="AnaKategori">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="ÜrünKategoriAdi" ColumnName="ÜrünKategoriAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banner">
+      <EntityTypeMapping TypeName="eTicaretModel.Banner">
+        <MappingFragment StoreEntitySet="Banner">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="banner1" ColumnName="banner" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -38,6 +46,77 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="iletisim">
+      <EntityTypeMapping TypeName="eTicaretModel.iletisim">
+        <MappingFragment StoreEntitySet="iletisim">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="isim" ColumnName="isim" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="mesaj" ColumnName="mesaj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kampanya">
+      <EntityTypeMapping TypeName="eTicaretModel.Kampanya">
+        <MappingFragment StoreEntitySet="Kampanya">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ürünAdi" ColumnName="ürünAdi" />
+          <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+          <ScalarProperty Name="beden" ColumnName="beden" />
+          <ScalarProperty Name="adet" ColumnName="adet" />
+          <ScalarProperty Name="ürünaciklama" ColumnName="ürünaciklama" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="Resim1" ColumnName="Resim1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KampanyaKategori">
+      <EntityTypeMapping TypeName="eTicaretModel.KampanyaKategori">
+        <MappingFragment StoreEntitySet="KampanyaKategori">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="KampanyaFK" ColumnName="KampanyaFK" />
+          <ScalarProperty Name="KampanyaAdi" ColumnName="KampanyaAdi" />
+          <ScalarProperty Name="KampanyaBanner" ColumnName="KampanyaBanner" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Slider">
+      <EntityTypeMapping TypeName="eTicaretModel.Slider">
+        <MappingFragment StoreEntitySet="Slider">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Resim1" ColumnName="Resim1" />
+          <ScalarProperty Name="Resim2" ColumnName="Resim2" />
+          <ScalarProperty Name="Resim3" ColumnName="Resim3" />
+          <ScalarProperty Name="Resim4" ColumnName="Resim4" />
+          <ScalarProperty Name="Resim5" ColumnName="Resim5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SosyalMedyaResim">
+      <EntityTypeMapping TypeName="eTicaretModel.SosyalMedyaResim">
+        <MappingFragment StoreEntitySet="SosyalMedyaResim">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Resim1" ColumnName="Resim1" />
+          <ScalarProperty Name="Resim2" ColumnName="Resim2" />
+          <ScalarProperty Name="Resim3" ColumnName="Resim3" />
+          <ScalarProperty Name="Resim4" ColumnName="Resim4" />
+          <ScalarProperty Name="Resim5" ColumnName="Resim5" />
+          <ScalarProperty Name="Resim6" ColumnName="Resim6" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="eTicaretModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Urunler">
       <EntityTypeMapping TypeName="eTicaretModel.Urunler">
         <MappingFragment StoreEntitySet="Urunler">
@@ -49,6 +128,10 @@
           <ScalarProperty Name="adet" ColumnName="adet" />
           <ScalarProperty Name="ürünaciklama" ColumnName="ürünaciklama" />
           <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="Resim1" ColumnName="Resim1" />
+          <ScalarProperty Name="Resim2" ColumnName="Resim2" />
+          <ScalarProperty Name="Resim3" ColumnName="Resim3" />
+          <ScalarProperty Name="Resim4" ColumnName="Resim4" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -65,6 +148,7 @@
           <ScalarProperty Name="telefon" ColumnName="telefon" />
           <ScalarProperty Name="sifre" ColumnName="sifre" />
           <ScalarProperty Name="sifreOnay" ColumnName="sifreOnay" />
+          <ScalarProperty Name="date" ColumnName="date" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

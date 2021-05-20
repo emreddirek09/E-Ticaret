@@ -28,6 +28,10 @@ namespace Proje.DataAccess
         public string adet { get; set; }
         public string ürünaciklama { get; set; }
         public Nullable<System.DateTime> date { get; set; }
+        public string Resim1 { get; set; }
+        public string Resim2 { get; set; }
+        public string Resim3 { get; set; }
+        public string Resim4 { get; set; }
     
         public virtual AltKategori AltKategori { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="BD_Elektrik.Admin.Admin" %>
+﻿<%@ Master Language="C#"  AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="BD_Elektrik.Admin.Admin" %>
 
 <!DOCTYPE html>
 
