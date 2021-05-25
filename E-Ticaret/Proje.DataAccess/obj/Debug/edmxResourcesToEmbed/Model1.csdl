@@ -55,6 +55,7 @@
     <Property Name="isim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="mesaj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="Kampanya">
     <Key>
@@ -68,7 +69,8 @@
     <Property Name="ürünaciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="date" Type="DateTime" Precision="3" />
     <Property Name="Resim1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="KampanyaKategori" Relationship="Self.FK_KampanyaKategori_Kampanya" FromRole="Kampanya" ToRole="KampanyaKategori" />
+    <Property Name="KampanyaKatFK" Type="Int32" />
+    <NavigationProperty Name="KampanyaKategori1" Relationship="eTicaretModel.FK_Kampanya_KampanyaKategori" FromRole="Kampanya" ToRole="KampanyaKategori" />
   </EntityType>
   <EntityType Name="KampanyaKategori">
     <Key>
@@ -79,7 +81,7 @@
     <Property Name="KampanyaAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="KampanyaBanner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="date" Type="DateTime" Precision="0" />
-    <NavigationProperty Name="Kampanya" Relationship="Self.FK_KampanyaKategori_Kampanya" FromRole="KampanyaKategori" ToRole="Kampanya" />
+    <NavigationProperty Name="Kampanya1" Relationship="eTicaretModel.FK_Kampanya_KampanyaKategori" FromRole="KampanyaKategori" ToRole="Kampanya" />
   </EntityType>
   <EntityType Name="Slider">
     <Key>
@@ -132,6 +134,7 @@
     <Property Name="Resim4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="AltKategori" Relationship="Self.FK_Urunler_AltKategori" FromRole="Urunler" ToRole="AltKategori" />
     <NavigationProperty Name="Favoriler" Relationship="Self.FK_Favoriler_Urunler" FromRole="Urunler" ToRole="Favoriler" />
+    <Property Name="Resim5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Uyeler">
     <Key>
@@ -210,18 +213,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_KampanyaKategori_Kampanya">
-    <End Role="Kampanya" Type="Self.Kampanya" Multiplicity="1" />
-    <End Role="KampanyaKategori" Type="Self.KampanyaKategori" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Kampanya">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="KampanyaKategori">
-        <PropertyRef Name="KampanyaFK" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="eTicaretEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="AltKategori" EntityType="Self.AltKategori" />
     <EntitySet Name="AnaKategori" EntityType="Self.AnaKategori" />
@@ -256,9 +247,21 @@
       <End Role="Uyeler" EntitySet="Uyeler" />
       <End Role="GirisYapan" EntitySet="GirisYapan" />
     </AssociationSet>
-    <AssociationSet Name="FK_KampanyaKategori_Kampanya" Association="Self.FK_KampanyaKategori_Kampanya">
-      <End Role="Kampanya" EntitySet="Kampanya" />
+    <AssociationSet Name="FK_Kampanya_KampanyaKategori" Association="eTicaretModel.FK_Kampanya_KampanyaKategori">
       <End Role="KampanyaKategori" EntitySet="KampanyaKategori" />
+      <End Role="Kampanya" EntitySet="Kampanya" />
     </AssociationSet>
   </EntityContainer>
+  <Association Name="FK_Kampanya_KampanyaKategori">
+    <End Type="eTicaretModel.KampanyaKategori" Role="KampanyaKategori" Multiplicity="0..1" />
+    <End Type="eTicaretModel.Kampanya" Role="Kampanya" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KampanyaKategori">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Kampanya">
+        <PropertyRef Name="KampanyaKatFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

@@ -7,8 +7,41 @@
                     <h3 class="page-header"><i class="fa fa-files-o"></i>Kampanyalı Ürünler</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="#">Ana Sayfa</a></li>
-                        <li><i class="icon_document_alt"></i>Ürünler</li>
+                        <li><i class="icon_document_alt"></i>Kategori</li>
                     </ol>
+                </div>
+            </div>
+             <div class="row">
+                <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Katagori
+                        </header>
+                        <div class="panel-body">
+                            <div class="form">
+                                <div class="form-group ">
+                                    <label for="cname" class="control-label col-lg-2">Kampanya Adı <span class="required">*</span></label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control" runat="server" id="txt_KampanyaAdi" type="text"><br />
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="cname" class="control-label col-lg-2">Kampanya Banner <span class="required">*</span></label>
+                                    <div class="col-lg-10">
+                                        <asp:FileUpload ID="FileUploadBanner" CssClass="form-control" runat="server" />
+                                        <asp:HiddenField ID="HiddenField1" runat="server" />
+                                        <br />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-offset-2 col-lg-10">
+                                        <asp:Button ID="ekle" class="btn btn-primary" OnClick="ekle_Click" runat="server" Text="Banner Ekle" />                                        
+                                    </div>
+                                </div>
+                                <asp:Label ID="Label1" runat="server" ForeColor="#CC0000"></asp:Label>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
             <div class="row">
@@ -20,7 +53,7 @@
                         <div class="panel-body">
                             <div class="form">
                                 <div class="form-group ">
-                                    <label for="cname" class="control-label col-lg-2">Kategori Seç <span class="required">*</span></label>
+                                    <label for="cname" class="control-label col-lg-2">Banner Seç <span class="required">*</span></label>
                                     <div class="col-lg-10">
                                         <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server">
                                             <asp:ListItem Value="-1">Seçiniz.</asp:ListItem>
@@ -61,13 +94,15 @@
                                     <label for="ccomment" class="control-label col-lg-2">Resim</label>
                                     <div class="col-lg-10">
                                         <asp:FileUpload ID="FileUpload1" runat="server" />
+                                        <asp:HiddenField ID="HiddenField2" runat="server" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-lg-offset-2 col-lg-10">
-                                        <button class="btn btn-primary" runat="server" type="submit">Save</button>
+                                        <asp:Button ID="UrunKaydet" class="btn btn-primary" OnClick="UrunKaydet_Click" runat="server" Text="Ürün Kaydet" />                                     
                                     </div>                                   
                                 </div>
+                                <asp:Label ID="Label2" runat="server" ForeColor="#CC0000"></asp:Label>
                             </div>
                         </div>
                     </section>

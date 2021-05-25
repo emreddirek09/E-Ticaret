@@ -55,34 +55,34 @@
                         <li>
                             <a class="" href="SliderEkleme.aspx">
                                 <i class="icon_desktop"></i>
-                                <span>Slider Ekleme</span>
+                                <span>Slider</span>
                             </a>
                         </li>
                         <li>
                             <a class="" href="BannerEkleme.aspx">
                                 <i class="icon_desktop"></i>
-                                <span>Banner Ekleme</span>
+                                <span>Banner </span>
                             </a>
                         </li> 
+                        <li>
+                            <a class="" href="SosyalMedyaResim.aspx">
+                                <i class="icon_document_alt"></i>
+                                <span>Sosyal Medya</span>
+                            </a>
+                        </li>
                         <li>
                             <a class="" href="Kategoriler.aspx">
                                 <i class="icon_document_alt"></i>
                                 <span>Kategoriler</span>
                             </a>
-                        </li>
+                        </li>                        
                         <li>
-                            <a class="" href="SosyalMedyaResim.aspx">
-                                <i class="icon_document_alt"></i>
-                                <span>Kategoriler</span>
-                            </a>
-                        </li>
-                        <li class="active">
                             <a class="" href="ürünler.aspx">
                                 <i class="icon_house_alt"></i>
                                 <span>Ürünler</span>
                             </a>
                         </li>
-                        <li class="active">
+                        <li>
                             <a class="" href="KampanyaliÜrünler.aspx">
                                 <i class="icon_house_alt"></i>
                                 <span>Kampanyalı Ürünler</span>

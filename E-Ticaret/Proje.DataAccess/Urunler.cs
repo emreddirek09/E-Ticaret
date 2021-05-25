@@ -32,6 +32,7 @@ namespace Proje.DataAccess
         public string Resim2 { get; set; }
         public string Resim3 { get; set; }
         public string Resim4 { get; set; }
+        public string Resim5 { get; set; }
     
         public virtual AltKategori AltKategori { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

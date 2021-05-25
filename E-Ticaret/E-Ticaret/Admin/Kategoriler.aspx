@@ -28,9 +28,10 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-lg-offset-2 col-lg-10">
-                                        <button class="btn btn-primary" type="submit">Save</button>
+                                        <asp:Button ID="ekle" OnClick="ekle_Click" class="btn btn-primary" runat="server" Text="Ekle" />                                        
                                     </div>
                                 </div>
+                                <asp:Label ID="Label1" runat="server" ForeColor="#CC0000"></asp:Label>
                             </div>
                         </div>
                     </section>
@@ -61,9 +62,10 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-lg-offset-2 col-lg-10">
-                                        <button class="btn btn-primary" type="submit">Save</button>
+                                        <asp:Button ID="save" OnClick="save_Click" class="btn btn-primary" runat="server" Text="Save" />
                                     </div>
                                 </div>
+                                 <asp:Label ID="Label2" runat="server" ForeColor="#CC0000"></asp:Label>
                             </div>
                         </div>
                     </section>

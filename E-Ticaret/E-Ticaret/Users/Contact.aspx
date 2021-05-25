@@ -30,12 +30,13 @@
                         <div class="contact__form">
                             <h5>Mesaj Gönderin</h5>
                             <form action="#">
-                                <input type="text" placeholder="İsim">
-                                <input type="text" placeholder="Email">
-                                <textarea placeholder="Mesajınız"></textarea>
-                                <button type="submit" class="site-btn">Gönder</button>
+                                <input type="text" runat="server" id="txt_isim" placeholder="İsim">
+                                <input type="text" runat="server" id="txt_mail" placeholder="Email">
+                                <textarea placeholder="Mesajınız" runat="server" id="txt_mesaj" ></textarea>
+                                <asp:Button ID="Gönder" OnClick="Gönder_Click" class="site-btn" runat="server" Text="Gönder" />
                             </form>
                         </div>
+                        <asp:Label ID="Label1"  runat="server" ForeColor="#CC0000"></asp:Label>
                     </div>
                 </div>
 

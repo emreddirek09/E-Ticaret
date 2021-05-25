@@ -48,6 +48,7 @@
     <Property Name="isim" Type="nvarchar(max)" />
     <Property Name="mail" Type="nvarchar(max)" />
     <Property Name="mesaj" Type="nvarchar(max)" />
+    <Property Name="date" Type="datetime" />
   </EntityType>
   <EntityType Name="Kampanya">
     <Key>
@@ -61,6 +62,7 @@
     <Property Name="ürünaciklama" Type="nvarchar(max)" />
     <Property Name="date" Type="datetime" />
     <Property Name="Resim1" Type="nvarchar(max)" />
+    <Property Name="KampanyaKatFK" Type="int" />
   </EntityType>
   <EntityType Name="KampanyaKategori">
     <Key>
@@ -121,6 +123,7 @@
     <Property Name="Resim2" Type="nvarchar(max)" />
     <Property Name="Resim3" Type="nvarchar(max)" />
     <Property Name="Resim4" Type="nvarchar(max)" />
+    <Property Name="Resim5" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Uyeler">
     <Key>
@@ -186,15 +189,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_KampanyaKategori_Kampanya">
-    <End Role="Kampanya" Type="Self.Kampanya" Multiplicity="1" />
-    <End Role="KampanyaKategori" Type="Self.KampanyaKategori" Multiplicity="*" />
+  <Association Name="FK_Kampanya_KampanyaKategori">
+    <End Role="KampanyaKategori" Type="Self.KampanyaKategori" Multiplicity="0..1" />
+    <End Role="Kampanya" Type="Self.Kampanya" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Kampanya">
+      <Principal Role="KampanyaKategori">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="KampanyaKategori">
-        <PropertyRef Name="KampanyaFK" />
+      <Dependent Role="Kampanya">
+        <PropertyRef Name="KampanyaKatFK" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -240,9 +243,9 @@
       <End Role="Uyeler" EntitySet="Uyeler" />
       <End Role="GirisYapan" EntitySet="GirisYapan" />
     </AssociationSet>
-    <AssociationSet Name="FK_KampanyaKategori_Kampanya" Association="Self.FK_KampanyaKategori_Kampanya">
-      <End Role="Kampanya" EntitySet="Kampanya" />
+    <AssociationSet Name="FK_Kampanya_KampanyaKategori" Association="Self.FK_Kampanya_KampanyaKategori">
       <End Role="KampanyaKategori" EntitySet="KampanyaKategori" />
+      <End Role="Kampanya" EntitySet="Kampanya" />
     </AssociationSet>
     <AssociationSet Name="FK_Urunler_AltKategori" Association="Self.FK_Urunler_AltKategori">
       <End Role="AltKategori" EntitySet="AltKategori" />

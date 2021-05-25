@@ -58,6 +58,7 @@
     <Compile Include="Favoriler.cs" />
     <Compile Include="GirisYapan.cs" />
     <Compile Include="Iletisim.cs" />
+    <Compile Include="Kampanya.cs" />
     <Compile Include="KampanyaKategori.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Slider.cs" />

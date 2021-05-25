@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="eTicaretModel.GirisYapan" Width="1.5" PointX="5.25" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="eTicaretModel.iletisim" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="eTicaretModel.Kampanya" Width="1.5" PointX="7.75" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="eTicaretModel.KampanyaKategori" Width="1.5" PointX="10" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="eTicaretModel.KampanyaKategori" Width="1.5" PointX="10.75" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="eTicaretModel.Slider" Width="1.5" PointX="7.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="eTicaretModel.SosyalMedyaResim" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="eTicaretModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
@@ -23,7 +23,7 @@
         <AssociationConnector Association="eTicaretModel.FK_Favoriler_GirisYapan" ManuallyRouted="false" />
         <AssociationConnector Association="eTicaretModel.FK_Favoriler_Urunler" ManuallyRouted="false" />
         <AssociationConnector Association="eTicaretModel.FK_GirisYapan_Uyeler" ManuallyRouted="false" />
-        <AssociationConnector Association="eTicaretModel.FK_KampanyaKategori_Kampanya" ManuallyRouted="false" />
+        <AssociationConnector Association="eTicaretModel.FK_Kampanya_KampanyaKategori" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

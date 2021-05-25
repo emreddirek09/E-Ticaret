@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="eTicaretModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="eTicaretModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AltKategori">
           <Key>
             <PropertyRef Name="id" />
@@ -53,6 +53,7 @@
           <Property Name="isim" Type="nvarchar(max)" />
           <Property Name="mail" Type="nvarchar(max)" />
           <Property Name="mesaj" Type="nvarchar(max)" />
+          <Property Name="date" Type="datetime" />
         </EntityType>
         <EntityType Name="Kampanya">
           <Key>
@@ -66,6 +67,7 @@
           <Property Name="ürünaciklama" Type="nvarchar(max)" />
           <Property Name="date" Type="datetime" />
           <Property Name="Resim1" Type="nvarchar(max)" />
+          <Property Name="KampanyaKatFK" Type="int" />
         </EntityType>
         <EntityType Name="KampanyaKategori">
           <Key>
@@ -126,6 +128,7 @@
           <Property Name="Resim2" Type="nvarchar(max)" />
           <Property Name="Resim3" Type="nvarchar(max)" />
           <Property Name="Resim4" Type="nvarchar(max)" />
+          <Property Name="Resim5" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Uyeler">
           <Key>
@@ -191,15 +194,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_KampanyaKategori_Kampanya">
-          <End Role="Kampanya" Type="Self.Kampanya" Multiplicity="1" />
-          <End Role="KampanyaKategori" Type="Self.KampanyaKategori" Multiplicity="*" />
+        <Association Name="FK_Kampanya_KampanyaKategori">
+          <End Role="KampanyaKategori" Type="Self.KampanyaKategori" Multiplicity="0..1" />
+          <End Role="Kampanya" Type="Self.Kampanya" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Kampanya">
+            <Principal Role="KampanyaKategori">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="KampanyaKategori">
-              <PropertyRef Name="KampanyaFK" />
+            <Dependent Role="Kampanya">
+              <PropertyRef Name="KampanyaKatFK" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -245,17 +248,16 @@
             <End Role="Uyeler" EntitySet="Uyeler" />
             <End Role="GirisYapan" EntitySet="GirisYapan" />
           </AssociationSet>
-          <AssociationSet Name="FK_KampanyaKategori_Kampanya" Association="Self.FK_KampanyaKategori_Kampanya">
-            <End Role="Kampanya" EntitySet="Kampanya" />
+          <AssociationSet Name="FK_Kampanya_KampanyaKategori" Association="Self.FK_Kampanya_KampanyaKategori">
             <End Role="KampanyaKategori" EntitySet="KampanyaKategori" />
+            <End Role="Kampanya" EntitySet="Kampanya" />
           </AssociationSet>
           <AssociationSet Name="FK_Urunler_AltKategori" Association="Self.FK_Urunler_AltKategori">
             <End Role="AltKategori" EntitySet="AltKategori" />
             <End Role="Urunler" EntitySet="Urunler" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="eTicaretModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -314,6 +316,7 @@
           <Property Name="isim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="mesaj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Kampanya">
           <Key>
@@ -327,7 +330,8 @@
           <Property Name="ürünaciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="date" Type="DateTime" Precision="3" />
           <Property Name="Resim1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="KampanyaKategori" Relationship="Self.FK_KampanyaKategori_Kampanya" FromRole="Kampanya" ToRole="KampanyaKategori" />
+          <Property Name="KampanyaKatFK" Type="Int32" />
+          <NavigationProperty Name="KampanyaKategori1" Relationship="eTicaretModel.FK_Kampanya_KampanyaKategori" FromRole="Kampanya" ToRole="KampanyaKategori" />
         </EntityType>
         <EntityType Name="KampanyaKategori">
           <Key>
@@ -338,7 +342,7 @@
           <Property Name="KampanyaAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="KampanyaBanner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="date" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Kampanya" Relationship="Self.FK_KampanyaKategori_Kampanya" FromRole="KampanyaKategori" ToRole="Kampanya" />
+          <NavigationProperty Name="Kampanya1" Relationship="eTicaretModel.FK_Kampanya_KampanyaKategori" FromRole="KampanyaKategori" ToRole="Kampanya" />
         </EntityType>
         <EntityType Name="Slider">
           <Key>
@@ -391,6 +395,7 @@
           <Property Name="Resim4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AltKategori" Relationship="Self.FK_Urunler_AltKategori" FromRole="Urunler" ToRole="AltKategori" />
           <NavigationProperty Name="Favoriler" Relationship="Self.FK_Favoriler_Urunler" FromRole="Urunler" ToRole="Favoriler" />
+          <Property Name="Resim5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Uyeler">
           <Key>
@@ -469,18 +474,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_KampanyaKategori_Kampanya">
-          <End Role="Kampanya" Type="Self.Kampanya" Multiplicity="1" />
-          <End Role="KampanyaKategori" Type="Self.KampanyaKategori" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Kampanya">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="KampanyaKategori">
-              <PropertyRef Name="KampanyaFK" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="eTicaretEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AltKategori" EntityType="Self.AltKategori" />
           <EntitySet Name="AnaKategori" EntityType="Self.AnaKategori" />
@@ -515,11 +508,23 @@
             <End Role="Uyeler" EntitySet="Uyeler" />
             <End Role="GirisYapan" EntitySet="GirisYapan" />
           </AssociationSet>
-          <AssociationSet Name="FK_KampanyaKategori_Kampanya" Association="Self.FK_KampanyaKategori_Kampanya">
-            <End Role="Kampanya" EntitySet="Kampanya" />
+          <AssociationSet Name="FK_Kampanya_KampanyaKategori" Association="eTicaretModel.FK_Kampanya_KampanyaKategori">
             <End Role="KampanyaKategori" EntitySet="KampanyaKategori" />
+            <End Role="Kampanya" EntitySet="Kampanya" />
           </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Kampanya_KampanyaKategori">
+          <End Type="eTicaretModel.KampanyaKategori" Role="KampanyaKategori" Multiplicity="0..1" />
+          <End Type="eTicaretModel.Kampanya" Role="Kampanya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KampanyaKategori">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Kampanya">
+              <PropertyRef Name="KampanyaKatFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -574,6 +579,7 @@
           <EntitySetMapping Name="iletisim">
             <EntityTypeMapping TypeName="eTicaretModel.iletisim">
               <MappingFragment StoreEntitySet="iletisim">
+                <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="isim" ColumnName="isim" />
                 <ScalarProperty Name="mail" ColumnName="mail" />
@@ -584,6 +590,7 @@
           <EntitySetMapping Name="Kampanya">
             <EntityTypeMapping TypeName="eTicaretModel.Kampanya">
               <MappingFragment StoreEntitySet="Kampanya">
+                <ScalarProperty Name="KampanyaKatFK" ColumnName="KampanyaKatFK" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="ürünAdi" ColumnName="ürünAdi" />
                 <ScalarProperty Name="fiyat" ColumnName="fiyat" />
@@ -645,6 +652,7 @@
           <EntitySetMapping Name="Urunler">
             <EntityTypeMapping TypeName="eTicaretModel.Urunler">
               <MappingFragment StoreEntitySet="Urunler">
+                <ScalarProperty Name="Resim5" ColumnName="Resim5" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="AltKatFK" ColumnName="AltKatFK" />
                 <ScalarProperty Name="ürünAdi" ColumnName="ürünAdi" />

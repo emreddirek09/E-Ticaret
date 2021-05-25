@@ -14,12 +14,19 @@ namespace Proje.DataAccess
     
     public partial class KampanyaKategori
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public KampanyaKategori()
+        {
+            this.Kampanya1 = new HashSet<Kampanya>();
+        }
+    
         public int id { get; set; }
         public int KampanyaFK { get; set; }
         public string KampanyaAdi { get; set; }
         public string KampanyaBanner { get; set; }
         public Nullable<System.DateTime> date { get; set; }
     
-        public virtual Kampanya Kampanya { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Kampanya> Kampanya1 { get; set; }
     }
 }

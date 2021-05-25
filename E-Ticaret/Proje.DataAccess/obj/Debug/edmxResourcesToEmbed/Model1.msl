@@ -49,6 +49,7 @@
     <EntitySetMapping Name="iletisim">
       <EntityTypeMapping TypeName="eTicaretModel.iletisim">
         <MappingFragment StoreEntitySet="iletisim">
+          <ScalarProperty Name="date" ColumnName="date" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="isim" ColumnName="isim" />
           <ScalarProperty Name="mail" ColumnName="mail" />
@@ -59,6 +60,7 @@
     <EntitySetMapping Name="Kampanya">
       <EntityTypeMapping TypeName="eTicaretModel.Kampanya">
         <MappingFragment StoreEntitySet="Kampanya">
+          <ScalarProperty Name="KampanyaKatFK" ColumnName="KampanyaKatFK" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="ürünAdi" ColumnName="ürünAdi" />
           <ScalarProperty Name="fiyat" ColumnName="fiyat" />
@@ -120,6 +122,7 @@
     <EntitySetMapping Name="Urunler">
       <EntityTypeMapping TypeName="eTicaretModel.Urunler">
         <MappingFragment StoreEntitySet="Urunler">
+          <ScalarProperty Name="Resim5" ColumnName="Resim5" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="AltKatFK" ColumnName="AltKatFK" />
           <ScalarProperty Name="ürünAdi" ColumnName="ürünAdi" />

@@ -43,7 +43,6 @@ namespace E_Ticaret.Users
         //    Txt_sifreOnay.Text = "";
 
         //}
-
         protected void Button1_Click(object sender, EventArgs e)
         {
             if (Txt_İsim.Text == "" &&
@@ -55,9 +54,7 @@ namespace E_Ticaret.Users
                    Txt_Telefon.Text == "" &&
                    Txt_sifre.Text == "" &&
                    Txt_sifreOnay.Text == "")
-            {
-               
-
+            {        
                 //uyari.Text = "Lütfen Boş alanları doldurunuz.";
             }
             else

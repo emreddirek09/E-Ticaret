@@ -51,7 +51,8 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Proje.Business">
+    <Reference Include="Proje.Business, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Proje.Business\bin\Debug\Proje.Business.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
@@ -867,6 +868,14 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\image\Banner\" />
+    <Folder Include="Admin\image\KampanyaBanner\" />
+    <Folder Include="Admin\image\KampanyaliÜrünler\" />
+    <Folder Include="Admin\image\Slider\" />
+    <Folder Include="Admin\image\SosyalMedya\" />
+    <Folder Include="Admin\image\ürünler\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

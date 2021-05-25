@@ -5,8 +5,8 @@ C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.DataAccess\bin\Debug\Entity
 C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.DataAccess\bin\Debug\EntityFramework.xml
 C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.DataAccess\obj\Debug\Proje.DataAccess.csprojAssemblyReference.cache
 C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.DataAccess\obj\Debug\Proje.DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.DataAccess\obj\Debug\Proje.DataAccess.csproj.CopyComplete
 C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.DataAccess\obj\Debug\Proje.DataAccess.dll
 C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.DataAccess\obj\Debug\Proje.DataAccess.pdb
+C:\Users\Emre\source\repos\E-Ticaret\E-Ticaret\Proje.DataAccess\obj\Debug\Proje.DataAccess.csprojAssemblyReference.cache

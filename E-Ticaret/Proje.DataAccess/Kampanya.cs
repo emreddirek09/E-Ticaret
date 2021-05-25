@@ -14,12 +14,6 @@ namespace Proje.DataAccess
     
     public partial class Kampanya
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Kampanya()
-        {
-            this.KampanyaKategori = new HashSet<KampanyaKategori>();
-        }
-    
         public int id { get; set; }
         public string ürünAdi { get; set; }
         public Nullable<int> fiyat { get; set; }
@@ -28,8 +22,8 @@ namespace Proje.DataAccess
         public string ürünaciklama { get; set; }
         public Nullable<System.DateTime> date { get; set; }
         public string Resim1 { get; set; }
+        public Nullable<int> KampanyaKatFK { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KampanyaKategori> KampanyaKategori { get; set; }
+        public virtual KampanyaKategori KampanyaKategori1 { get; set; }
     }
 }

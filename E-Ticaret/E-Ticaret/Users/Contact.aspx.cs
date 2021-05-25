@@ -13,5 +13,23 @@ namespace E_Ticaret.Users
         {
 
         }
+        Proje.Business.Iletisim IletisimNesne = new Proje.Business.Iletisim();
+        protected void Gönder_Click(object sender, EventArgs e)
+        {
+            string isim = txt_isim.Value;
+            string mail = txt_mail.Value;
+            string mesaj = txt_mesaj.Value;
+            if (isim != "" && mail != "" && mesaj != "")
+            {
+                IletisimNesne.BizeUlas(isim, mail, mesaj);
+                Label1.Text = "Mesajınız İletilmiştir. En kısa sürede dönüş yapılacaktır.";
+            }
+            else
+            {
+                Label1.Text = "Lütfen Boş Alanları Doldurunuz.";
+            }
+           
+
+        }
     }
 }

@@ -20,17 +20,19 @@
                         <div class="panel-body">
                             <div class="form">
                                 <div class="form-group ">
-                                    <label for="cname" class="control-label col-lg-2">Banner Seç <span class="required">*</span></label>
+                                    <label for="cname" class="control-label col-lg-2">Banner <span class="required">*</span></label>
                                     <div class="col-lg-10">
                                         <asp:FileUpload ID="FileUpload1" CssClass="form-control" runat="server" />
+                                        <asp:HiddenField ID="HiddenField1" runat="server" />
                                         <br />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-lg-offset-2 col-lg-10">
-                                        <button class="btn btn-primary" type="submit">Save</button>
+                                        <asp:Button ID="Save" OnClick="Save_Click" class="btn btn-primary" runat="server" Text="Save" />
                                     </div>
                                 </div>
+                                <asp:Label ID="Label1" runat="server" ForeColor="#CC0000"></asp:Label>
                             </div>
                         </div>
                     </section>
