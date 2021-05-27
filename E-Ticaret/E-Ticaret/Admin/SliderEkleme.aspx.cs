@@ -126,11 +126,11 @@ namespace E_Ticaret.Admin
                         }
                     }
 
-                    string Resim1 = "image / Slider /" + HiddenField1.Value;
-                    string Resim2 = "image / Slider /" + HiddenField2.Value;
-                    string Resim3 = "image / Slider /" + HiddenField3.Value;
-                    string Resim4 = "image / Slider /" + HiddenField4.Value;
-                    string Resim5 = "image / Slider /" + HiddenField5.Value;
+                    string Resim1 = "../Admin/image/ Slider/"+HiddenField1.Value;
+                    string Resim2 = "../Admin/image/ Slider/"+HiddenField2.Value;
+                    string Resim3 = "../Admin/image/ Slider/"+HiddenField3.Value;
+                    string Resim4 = "../Admin/image/ Slider/"+HiddenField4.Value;
+                    string Resim5 = "../Admin/image/ Slider/"+HiddenField5.Value;
 
                     sliderNesne.SliderEkle(Resim1,Resim2,Resim3,Resim4,Resim5);
                     Label1.Text = "Ekleme Başarılı";

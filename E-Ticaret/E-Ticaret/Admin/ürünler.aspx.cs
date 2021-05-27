@@ -131,11 +131,11 @@ namespace BD_Elektrik.Admin
                 }
             }
 
-            string Resim1 = "image / ürünler /" + HiddenField1.Value;
-            string Resim2 = "image / ürünler /" + HiddenField2.Value;
-            string Resim3 = "image / ürünler /" + HiddenField3.Value;
-            string Resim4 = "image / ürünler /" + HiddenField4.Value;
-            string Resim5 = "image / ürünler /" + HiddenField5.Value;
+            string Resim1 = "../Admin/image/ürünler/"+HiddenField1.Value;
+            string Resim2 = "../Admin/image/ürünler/"+HiddenField2.Value;
+            string Resim3 = "../Admin/image/ürünler/"+HiddenField3.Value;
+            string Resim4 = "../Admin/image/ürünler/"+HiddenField4.Value;
+            string Resim5 = "../Admin/image/ürünler/"+HiddenField5.Value;
 
 
             if (DropDownList1.SelectedValue == "-1")

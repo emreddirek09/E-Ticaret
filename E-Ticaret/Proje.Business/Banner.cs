@@ -20,5 +20,26 @@ namespace Proje.Business
             entities1.SaveChanges();
             return "Başarılı";
         }
+        public int VeriSil(int i)
+        {
+            var stud = (from s1 in entities1.Banner
+                        where s1.id == i
+                        select s1).SingleOrDefault();
+
+            //Delete it from memory
+            entities1.Banner.Remove(stud);
+            //Save to database
+            entities1.SaveChanges();
+
+            return 1;
+        }
+        public List<Proje.DataAccess.Banner> Listele()
+
+        {
+            Proje.DataAccess.eTicaretEntities1 ent = new DataAccess.eTicaretEntities1();
+            var sonuc = ent.Banner.ToList();
+            return sonuc;
+        }
+
     }
 }

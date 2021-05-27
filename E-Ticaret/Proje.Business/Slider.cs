@@ -33,5 +33,12 @@ namespace Proje.Business
             int count = entities1.Slider.Count();
             return count;
         }
+        public List<Proje.DataAccess.Slider> Listele()
+
+        {
+            Proje.DataAccess.eTicaretEntities1 ent = new DataAccess.eTicaretEntities1();
+            var sonuc = ent.Slider.ToList();
+            return sonuc;
+        }
     }
 }

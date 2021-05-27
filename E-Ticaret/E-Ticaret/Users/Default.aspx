@@ -4,49 +4,51 @@
     <section class="categories">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-                            <div class="categories__item set-bg" data-setbg="img/categories/category-2.jpg" style="background-image: url(&quot;img/categories/category-2.jpg&quot;);">
-                                <%--<div class="categories__text">
+                <asp:Repeater ID="Repeater2" runat="server">
+                    <ItemTemplate>
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 p-0">
+                                    <div class="categories__item set-bg" data-setbg="<%# Eval("Resim1") %>" >
+                                        <%--<div class="categories__text">
                                     <h4>Men’s fashion</h4>
                                     <p>358 items</p>
                                     <a href="#">Shop now</a>
                                 </div>--%>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-                            <div class="categories__item set-bg" data-setbg="img/categories/category-3.jpg" style="background-image: url(&quot;img/categories/category-3.jpg&quot;);">
-                                <%--<div class="categories__text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 p-0">
+                                    <div class="categories__item set-bg" data-setbg="<%# Eval("Resim2") %>" >
+                                        <%--<div class="categories__text">
                                     <h4>Kid’s fashion</h4>
                                     <p>273 items</p>
                                     <a href="#">Shop now</a>
                                 </div>--%>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-                            <div class="categories__item set-bg" data-setbg="img/categories/category-4.jpg" style="background-image: url(&quot;img/categories/category-4.jpg&quot;);">
-                                <%--<div class="categories__text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 p-0">
+                                    <div class="categories__item set-bg" data-setbg="<%# Eval("Resim3") %>">
+                                        <%--<div class="categories__text">
                                     <h4>Cosmetics</h4>
                                     <p>159 items</p>
                                     <a href="#">Shop now</a>
                                 </div>--%>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-                            <div class="categories__item set-bg" data-setbg="img/categories/category-5.jpg" style="background-image: url(&quot;img/categories/category-5.jpg&quot;);">
-                                <%--<div class="categories__text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 p-0">
+                                    <div class="categories__item set-bg" data-setbg="<%# Eval("Resim4") %>" >
+                                        <%--<div class="categories__text">
                                     <h4>Accessories</h4>
                                     <p>792 items</p>
                                     <a href="#">Shop now</a>
                                 </div>--%>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-0">
-                    <div class="categories__item categories__large__item set-bg" data-setbg="img/categories/category-1.jpg" style="background-image: url(&quot;img/categories/category-1.jpg&quot;);">
-                        <%--<div class="categories__text">
+                        <div class="col-lg-6 p-0">
+                            <div class="categories__item categories__large__item set-bg" data-setbg="<%# Eval("Resim5") %>" >
+                                <%--<div class="categories__text">
                             <h1>Women’s fashion</h1>
                             <p>
                                 Sitamet, consectetur adipiscing elit, sed do eiusmod tempor incidid-unt labore
@@ -54,21 +56,34 @@
                             </p>
                             <a href="#">Shop now</a>
                         </div>--%>
-                    </div>
-                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
         </div>
     </section>
-    <section class="banner set-bg" data-setbg="img/banner/banner-1.jpg" style="background-image: url(&quot;img/banner/banner-1.jpg&quot;);">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-7 col-lg-8 m-auto">
-                    <div class="banner__slider owl-carousel owl-loaded owl-drag">
+    <asp:Repeater ID="Repeater1" runat="server">
+        <ItemTemplate>
+            <section class="banner set-bg" data-setbg="<%# Eval("banner") %>">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-7 col-lg-8 m-auto">
+                            <div class="banner__slider owl-carousel owl-loaded owl-drag">
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
+        </ItemTemplate>
+    </asp:Repeater>
+    <%--<asp:Repeater ID="Repeater1" runat="server">
+        <ItemTemplate>
+            <section class="banner set-bg">
+                <img style="height: 140px; width: 400px;" src=" <%# Eval("banner") %>" class="img-fluid">
+            </section>
+        </ItemTemplate>
+    </asp:Repeater>--%>
     <br />
     <section class="services spad">
         <div class="container">

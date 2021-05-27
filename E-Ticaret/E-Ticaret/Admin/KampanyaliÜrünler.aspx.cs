@@ -54,7 +54,7 @@ namespace E_Ticaret.Admin
 
                 }
             }
-            string Banner = "image / KampanyaBanner /" + HiddenField1.Value;
+            string Banner = "../Admin/image/KampanyaBanner/"+HiddenField1.Value;
 
             if (txt_KampanyaAdi.Value == "" && FileUploadBanner.HasFile != true)
             {
@@ -94,7 +94,7 @@ namespace E_Ticaret.Admin
                     Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "BİLGİLENDİRME ", "<script>alert('Dosya yüklenemedi:'" + ex.Message + ");</script>");
                 }
             }
-            string ürün = "image / KampanyaliÜrünler /" + HiddenField2.Value;
+            string ürün = "../Admin/image/KampanyaliÜrünler /"+HiddenField2.Value;
 
 
             if (DropDownList1.SelectedValue == "-1")

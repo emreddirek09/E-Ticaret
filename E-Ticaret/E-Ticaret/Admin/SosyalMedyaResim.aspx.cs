@@ -146,12 +146,12 @@ namespace E_Ticaret.Admin
                         }
                     }
 
-                    string Resim1 = "image/SosyalMedya/" + HiddenField1.Value;
-                    string Resim2 = "image/SosyalMedya/" + HiddenField2.Value;
-                    string Resim3 = "image/SosyalMedya/" + HiddenField3.Value;
-                    string Resim4 = "image/SosyalMedya/" + HiddenField4.Value;
-                    string Resim5 = "image/SosyalMedya/" + HiddenField5.Value;
-                    string Resim6 = "image/SosyalMedya/" + HiddenField6.Value;
+                    string Resim1 = "../Admin/image/SosyalMedya/"+HiddenField1.Value;
+                    string Resim2 = "../Admin/image/SosyalMedya/"+HiddenField2.Value;
+                    string Resim3 = "../Admin/image/SosyalMedya/"+HiddenField3.Value;
+                    string Resim4 = "../Admin/image/SosyalMedya/"+HiddenField4.Value;
+                    string Resim5 = "../Admin/image/SosyalMedya/"+HiddenField5.Value;
+                    string Resim6 = "../Admin/image/SosyalMedya/"+HiddenField6.Value;
 
                     sosyalMedyaResimNesne.ResimEkle(Resim1, Resim2, Resim3, Resim4, Resim5, Resim6);
                     Label1.Text = "Ekleme Başarılı";

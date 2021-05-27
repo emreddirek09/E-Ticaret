@@ -15,6 +15,28 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
+                            Banner Listesi
+                        </header>
+                        <div class="panel-body">
+                            <div class="form">
+                                <div class="form-group ">
+                                    <label for="cname" class="control-label col-lg-2">Banner id <span class="required">*</span></label>
+                                    <div class="col-lg-10">
+                                        <asp:GridView ID="GridView1" runat="server">
+
+                                        </asp:GridView>
+                                        <br />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading">
                             Banner Ekle
                         </header>
                         <div class="panel-body">
@@ -38,6 +60,33 @@
                     </section>
                 </div>
             </div>
+             <div class="row">
+                <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Banner Sil
+                        </header>
+                        <div class="panel-body">
+                            <div class="form">
+                                <div class="form-group ">
+                                    <label for="cname" class="control-label col-lg-2">Banner id <span class="required">*</span></label>
+                                    <div class="col-lg-10">
+                                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                                        <br />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-offset-2 col-lg-10">
+                                        <asp:Button ID="Sİl" runat="server" OnClick="Sİl_Click" class="btn btn-primary" Text="Sil" />
+                                    </div>
+                                </div>
+                                <asp:Label ID="Label2" runat="server" ForeColor="#CC0000"></asp:Label>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
         </section>
     </section>
 </asp:Content>
